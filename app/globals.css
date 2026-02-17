@@ -32,3 +32,22 @@ body {
     linear-gradient(90deg, rgba(255, 106, 0, 0.03) 1px, transparent 1px);
   background-size: 64px 64px;
 }
+
+/* Embed pages: subtle animated orange glow */
+.embed-page-glow::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background: radial-gradient(
+    ellipse 80% 50% at 50% -20%,
+    rgba(255, 106, 0, 0.12) 0%,
+    transparent 50%
+  );
+  animation: embed-glow-pulse 8s ease-in-out infinite;
+}
+@keyframes embed-glow-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}

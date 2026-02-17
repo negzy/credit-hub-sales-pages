@@ -1,0 +1,50 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import TypeformEmbed from "@/components/TypeformEmbed";
+
+export const metadata: Metadata = {
+  title: "Evolution Mentorship Application | The Credit Hub",
+  description:
+    "Apply to work with us to build and scale your automated credit and funding business.",
+};
+
+const EVOLUTION_FORM_ID = "01KHB47BQ7E96776PJEYC75BFB";
+
+export default function EvolutionPage() {
+  return (
+    <div className="relative min-h-screen bg-[#000000] embed-page-glow">
+      <div className="relative z-10 mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        {/* Top section */}
+        <header className="text-center">
+          <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
+            Evolution Mentorship Application
+          </h1>
+          <p className="mx-auto mt-4 max-w-xl text-lg text-gray-400">
+            Apply to work with us to build and scale your automated credit and
+            funding business.
+          </p>
+          {/* Gradient divider */}
+          <div
+            className="mx-auto mt-10 h-px w-24 rounded-full bg-gradient-to-r from-transparent via-[#FF6A00] to-transparent"
+            aria-hidden
+          />
+        </header>
+
+        {/* Typeform embed */}
+        <div className="mt-10 w-full">
+          <TypeformEmbed formId={EVOLUTION_FORM_ID} className="rounded-xl" />
+        </div>
+
+        {/* Back link */}
+        <p className="mt-8 text-center">
+          <Link
+            href="/"
+            className="text-sm font-medium text-[#FF6A00] hover:text-[#FF6A00]/80 transition-colors"
+          >
+            ← Back to The Credit Hub
+          </Link>
+        </p>
+      </div>
+    </div>
+  );
+}
