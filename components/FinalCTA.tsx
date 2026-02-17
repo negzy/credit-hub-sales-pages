@@ -21,18 +21,24 @@ export default function FinalCTA() {
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row sm:flex-wrap">
             <Link
               href={LINKS.creditGpsQuiz}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full rounded-lg bg-accent-orange px-8 py-4 text-center text-base font-medium text-white transition-colors hover:bg-accent-orange-dim focus:outline-none focus:ring-2 focus:ring-accent-orange focus:ring-offset-2 focus:ring-offset-surface-dark sm:w-auto"
             >
               Take Credit GPS Quiz
             </Link>
             <Link
               href={LINKS.premiumSkool}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full rounded-lg border border-surface-border bg-surface-card px-8 py-4 text-center text-base font-medium text-white transition-colors hover:border-accent-orange/50 hover:bg-surface-card/80 sm:w-auto"
             >
               Join Premium
             </Link>
             <Link
               href={LINKS.evolutionApply}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full rounded-lg border border-surface-border bg-surface-card px-8 py-4 text-center text-base font-medium text-white transition-colors hover:border-accent-orange/50 hover:bg-surface-card/80 sm:w-auto"
             >
               Apply for Evolution

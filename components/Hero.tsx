@@ -24,12 +24,16 @@ export default function Hero() {
         <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
             href={LINKS.premiumSkool}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full rounded-lg bg-accent-orange px-8 py-4 text-center text-base font-medium text-white transition-colors hover:bg-accent-orange-dim focus:outline-none focus:ring-2 focus:ring-accent-orange focus:ring-offset-2 focus:ring-offset-surface-dark sm:w-auto"
           >
             Join Premium on Skool
           </Link>
           <Link
             href={LINKS.creditGpsQuiz}
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full rounded-lg border border-surface-border bg-surface-card px-8 py-4 text-center text-base font-medium text-white transition-colors hover:border-accent-orange/50 hover:bg-surface-card/80 sm:w-auto"
           >
             Take the Credit GPS Quiz

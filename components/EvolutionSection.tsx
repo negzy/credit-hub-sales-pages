@@ -86,6 +86,8 @@ export default function EvolutionSection() {
           <div className="mt-10">
             <Link
               href={LINKS.evolutionApply}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block rounded-xl bg-[#FF6A00] px-8 py-4 text-base font-semibold text-white shadow-[0_0_32px_rgba(255,106,0,0.35)] transition-all hover:bg-[#e55f00] hover:shadow-[0_0_40px_rgba(255,106,0,0.25)] focus:outline-none focus:ring-2 focus:ring-[#FF6A00] focus:ring-offset-2 focus:ring-offset-black"
             >
               Apply to Join
@@ -251,6 +253,8 @@ export default function EvolutionSection() {
             <div className="mt-8">
               <Link
                 href={LINKS.evolutionApply}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block rounded-xl bg-[#FF6A00] px-8 py-4 text-base font-semibold text-white transition-all hover:bg-[#e55f00] focus:outline-none focus:ring-2 focus:ring-[#FF6A00] focus:ring-offset-2 focus:ring-offset-black"
               >
                 Apply for Evolution
@@ -274,6 +278,8 @@ export default function EvolutionSection() {
           <div className="mt-8">
             <Link
               href={LINKS.evolutionApply}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block rounded-xl bg-[#FF6A00] px-10 py-4 text-lg font-semibold text-white shadow-[0_0_32px_rgba(255,106,0,0.35)] transition-all hover:bg-[#e55f00] focus:outline-none focus:ring-2 focus:ring-[#FF6A00] focus:ring-offset-2 focus:ring-offset-black"
             >
               Apply Now

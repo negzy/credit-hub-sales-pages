@@ -169,6 +169,8 @@ export default function PremiumSection() {
         <div className="mt-16 text-center">
           <Link
             href={LINKS.premiumSkool}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block rounded-xl bg-accent-orange px-10 py-4 text-lg font-medium text-white shadow-glow-orange-sm transition-all hover:bg-accent-orange-dim hover:shadow-glow-orange focus:outline-none focus:ring-2 focus:ring-accent-orange focus:ring-offset-2 focus:ring-offset-surface-dark"
           >
             Join Premium

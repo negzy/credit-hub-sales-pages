@@ -98,6 +98,8 @@ export default function PathCards() {
               <div className="mt-8">
                 <Link
                   href={card.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-block rounded-lg bg-accent-orange px-6 py-3 text-base font-medium text-white transition-colors hover:bg-accent-orange-dim focus:outline-none focus:ring-2 focus:ring-accent-orange focus:ring-offset-2 focus:ring-offset-surface-dark"
                 >
                   {card.cta}

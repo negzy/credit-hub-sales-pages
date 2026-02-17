@@ -52,6 +52,8 @@ function CtaButton() {
   return (
     <Link
       href={LINKS.capitalAccessDfy}
+      target="_blank"
+      rel="noopener noreferrer"
       className="inline-block rounded-xl bg-[#FF7A00] px-8 py-4 text-base font-semibold text-white shadow-glow-button transition-all hover:bg-[#e66d00] hover:shadow-glow-orange focus:outline-none focus:ring-2 focus:ring-[#FF7A00] focus:ring-offset-2 focus:ring-offset-[#0B0B0F]"
     >
       Start Capital Access DFY

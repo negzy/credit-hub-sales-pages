@@ -65,6 +65,8 @@ function CtaButton({ variant = "primary" }: { variant?: "primary" | "footer" }) 
   return (
     <Link
       href={LINKS.creditResetDfy}
+      target="_blank"
+      rel="noopener noreferrer"
       className="inline-block rounded-xl bg-[#ff7a00] px-8 py-4 text-base font-semibold text-white shadow-glow-button transition-all hover:bg-[#e66d00] hover:shadow-glow-orange focus:outline-none focus:ring-2 focus:ring-[#ff7a00] focus:ring-offset-2 focus:ring-offset-black"
     >
       {label}
