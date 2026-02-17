@@ -13,7 +13,7 @@ const EVOLUTION_FORM_ID = "01KHB47BQ7E96776PJEYC75BFB";
 export default function EvolutionPage() {
   return (
     <div className="relative min-h-screen bg-[#000000] embed-page-glow">
-      <div className="relative z-10 mx-auto max-w-4xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+      <div className="relative z-10 mx-auto max-w-4xl px-4 py-12 pb-32 sm:px-6 sm:py-16 sm:pb-16 lg:px-8">
         {/* Top section */}
         <header className="text-center">
           <h1 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
@@ -31,12 +31,12 @@ export default function EvolutionPage() {
         </header>
 
         {/* Typeform embed */}
-        <div className="mt-10 w-full">
+        <div className="mt-10 w-full overflow-visible">
           <TypeformEmbed formId={EVOLUTION_FORM_ID} className="rounded-xl" />
         </div>
 
-        {/* Back link */}
-        <p className="mt-8 text-center">
+        {/* Back link - extra spacing on mobile so it's not hidden */}
+        <p className="mt-8 pb-8 text-center sm:pb-0">
           <Link
             href="/"
             className="text-sm font-medium text-[#FF6A00] hover:text-[#FF6A00]/80 transition-colors"

@@ -19,8 +19,7 @@ export default function TypeformEmbed({ formId, className = "" }: TypeformEmbedP
         data-tf-inline-on-mobile
         data-tf-medium="snippet"
         data-tf-full-screen
-        className={`min-h-[60vh] w-full ${className}`}
-        style={{ minHeight: "500px" }}
+        className={`typeform-embed-mobile min-h-[60vh] w-full sm:min-h-[500px] ${className}`}
       />
     </>
   );

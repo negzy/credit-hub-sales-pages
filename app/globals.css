@@ -51,3 +51,19 @@ body {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.6; }
 }
+
+/* Typeform embed: mobile-responsive so form + button stay visible and scrollable */
+@media (max-width: 640px) {
+  .typeform-embed-mobile {
+    min-height: 85vh;
+    padding-bottom: env(safe-area-inset-bottom, 32px);
+  }
+  /* Typeform injects an iframe - give it enough height so content + button are scrollable */
+  .typeform-embed-mobile iframe {
+    min-height: 75vh !important;
+    height: 75vh !important;
+  }
+}
+.typeform-embed-mobile {
+  overflow: visible;
+}
