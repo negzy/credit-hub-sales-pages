@@ -25,7 +25,14 @@ Credit-hub-sales-pages/
 │   ├── FAQAccordion.tsx     ← FAQ accordion (questions open/close)
 │   ├── FinalCTA.tsx        ← Final call-to-action section
 │   ├── PathCards.tsx       ← “Choose your path” cards (not on main flow now)
+│   ├── TypeformEmbed.tsx   ← Typeform embed (used on /gps, /evolution)
+│   ├── CalEmbed.tsx        ← Cal.com scheduler embed (used on /book/*)
 │   └── icons.tsx           ← SVG icons used in components
+│
+├── app/book/               ← Cal.com booking pages
+│   ├── capital-access/     ← /book/capital-access
+│   ├── credit-reset/       ← /book/credit-reset
+│   └── evolution/          ← /book/evolution
 │
 ├── lib/
 │   └── links.ts            ← All button links (edit this to add your URLs)
@@ -54,7 +61,8 @@ You should then see the `app`, `components`, and `lib` folders in the sidebar.
 
 | To change… | Open this file |
 |------------|----------------|
-| Button links (Skool, Calendly, etc.) | `lib/links.ts` |
+| Button links (Skool, Cal.com, etc.) | `lib/links.ts` |
+| Cal.com scheduler paths (for /book/* pages) | `lib/links.ts` → `LINKS.cal` |
 | Hero headline, subtitle, trust line | `components/Hero.tsx` |
 | Credit Reset DFY content | `components/CreditResetSection.tsx` |
 | Capital Access DFY content | `components/CapitalAccessSection.tsx` |
