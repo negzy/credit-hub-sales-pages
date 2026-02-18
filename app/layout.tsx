@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ScrollToTop from "@/components/ScrollToTop";
 
 export const metadata: Metadata = {
   title: "The Credit Hub — Learn. Fix. Fund. Build.",
@@ -14,7 +15,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="bg-surface-dark">
-      <body className="min-h-screen font-sans noise-overlay grid-pattern">{children}</body>
+      <body className="min-h-screen font-sans noise-overlay grid-pattern">
+        {children}
+        <ScrollToTop />
+      </body>
     </html>
   );
 }
