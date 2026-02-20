@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { LINKS } from "@/lib/links";
 import Countdown from "@/components/Countdown";
 import InvitationTemplates from "@/components/InvitationTemplates";
@@ -95,12 +96,6 @@ export default function AffiliatesPage() {
             >
               Get your link on Skool
             </Link>
-            <Link
-              href={LINKS.affiliatesApply}
-              className="inline-block rounded-lg border border-white/20 bg-white/5 px-8 py-4 text-base font-medium text-white transition-colors hover:bg-white/10"
-            >
-              Apply / Register for payouts
-            </Link>
           </div>
           <p className="mt-6 text-sm text-gray-500">
             Already in the community? Go to Skool, click Invite, and copy your link.
@@ -186,6 +181,26 @@ export default function AffiliatesPage() {
               </li>
             ))}
           </ol>
+          
+          {/* Skool invite button visual guide */}
+          <div className="mt-10 rounded-xl border border-white/10 bg-white/[0.04] p-6">
+            <p className="mb-4 text-center text-sm font-medium text-gray-300">
+              Here's where to find the Invite button in Skool:
+            </p>
+            <div className="relative mx-auto max-w-2xl overflow-hidden rounded-lg border border-white/10 bg-black/50">
+              <div className="relative w-full">
+                <Image
+                  src="/images/skool-invite-button.png"
+                  alt="Skool invite button location - click Invite button in the community to get your affiliate link"
+                  width={1200}
+                  height={800}
+                  className="w-full h-auto rounded-lg"
+                  unoptimized
+                />
+              </div>
+            </div>
+          </div>
+
           <div className="mt-10 text-center">
             <Link
               href={LINKS.affiliatesSkool}
@@ -251,12 +266,6 @@ export default function AffiliatesPage() {
               className="inline-block rounded-lg bg-accent-orange px-8 py-4 text-base font-medium text-white transition-colors hover:bg-accent-orange-dim focus:outline-none focus:ring-2 focus:ring-accent-orange focus:ring-offset-2 focus:ring-offset-black"
             >
               Get your link now
-            </Link>
-            <Link
-              href={LINKS.affiliatesApply}
-              className="inline-block rounded-lg border border-white/20 bg-white/5 px-8 py-4 text-base font-medium text-white transition-colors hover:bg-white/10"
-            >
-              Register for payouts
             </Link>
           </div>
         </div>
