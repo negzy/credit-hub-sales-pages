@@ -13,6 +13,13 @@ export const LINKS = {
   evolutionApply: "/evolution",
   contact: "https://www.skool.com/@nuelnelson",
 
+  /** Affiliates / partner program */
+  affiliatesApply: "#",
+  /** Skool community — affiliates get their invite link here */
+  affiliatesSkool: "https://www.skool.com/tch",
+  /** Affiliates countdown end (ISO date). Leave empty "" to hide countdown. */
+  affiliatesCountdownEnd: "2025-04-15T23:59:59",
+
   /** Cal.com scheduler paths (username/event-type or full URL). Used for /book/* pages. */
   cal: {
     capitalAccess: "credithub/funding",
