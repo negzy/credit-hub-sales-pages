@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 
+const PLACEHOLDER = "[YOUR LINK]";
+
 const TEMPLATES = [
   {
     title: "For DMs / personal",
@@ -21,11 +23,22 @@ const TEMPLATES = [
   },
 ];
 
-function TemplateCard({ title, body }: { title: string; body: string }) {
+function TemplateCard({
+  title,
+  body,
+  resolvedBody,
+  canCopy,
+}: {
+  title: string;
+  body: string;
+  resolvedBody: string;
+  canCopy: boolean;
+}) {
   const [copied, setCopied] = useState(false);
 
   function handleCopy() {
-    navigator.clipboard.writeText(body).then(() => {
+    if (!canCopy) return;
+    navigator.clipboard.writeText(resolvedBody).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     });
@@ -38,24 +51,49 @@ function TemplateCard({ title, body }: { title: string; body: string }) {
         <button
           type="button"
           onClick={handleCopy}
-          className="shrink-0 rounded-lg bg-accent-orange/20 px-3 py-1.5 text-xs font-medium text-accent-orange transition-colors hover:bg-accent-orange/30"
+          disabled={!canCopy}
+          className="shrink-0 rounded-lg bg-accent-orange/20 px-3 py-1.5 text-xs font-medium text-accent-orange transition-colors hover:bg-accent-orange/30 disabled:cursor-not-allowed disabled:opacity-50"
         >
           {copied ? "Copied" : "Copy"}
         </button>
       </div>
-      <p className="mt-3 whitespace-pre-line text-sm text-gray-400">{body}</p>
+      <p className="mt-3 whitespace-pre-line text-sm text-gray-400">{resolvedBody}</p>
     </div>
   );
 }
 
 export default function InvitationTemplates() {
+  const [affiliateLink, setAffiliateLink] = useState("");
+  const link = affiliateLink.trim();
+  const hasLink = link.length > 0;
+
   return (
     <div className="space-y-6">
-      <p className="text-center text-sm text-gray-500">
-        Replace [YOUR LINK] with your Skool invite link before sharing.
-      </p>
+      <div className="rounded-xl border border-white/10 bg-white/[0.04] p-5">
+        <label htmlFor="affiliate-link" className="block text-sm font-medium text-white">
+          Paste your affiliate link
+        </label>
+        <p className="mt-1 text-xs text-gray-500">
+          Enter your Skool invite link once—all templates below will auto-fill. Then copy and paste anywhere.
+        </p>
+        <input
+          id="affiliate-link"
+          type="url"
+          inputMode="url"
+          placeholder="https://www.skool.com/..."
+          value={affiliateLink}
+          onChange={(e) => setAffiliateLink(e.target.value)}
+          className="mt-3 w-full rounded-lg border border-white/20 bg-black/50 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-accent-orange focus:outline-none focus:ring-1 focus:ring-accent-orange"
+        />
+      </div>
       {TEMPLATES.map((t, i) => (
-        <TemplateCard key={i} title={t.title} body={t.body} />
+        <TemplateCard
+          key={i}
+          title={t.title}
+          body={t.body}
+          resolvedBody={hasLink ? t.body.replace(PLACEHOLDER, link) : t.body}
+          canCopy={hasLink}
+        />
       ))}
     </div>
   );

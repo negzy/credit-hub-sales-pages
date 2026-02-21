@@ -224,7 +224,7 @@ export default function AffiliatesPage() {
             Invitation templates
           </h2>
           <p className="mt-3 text-center text-gray-400">
-            Copy, paste your link where it says [YOUR LINK], and share.
+            Paste your affiliate link once above—templates auto-fill. Then copy and paste anywhere.
           </p>
           <div className="mt-10">
             <InvitationTemplates />
