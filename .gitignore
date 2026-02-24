@@ -36,3 +36,11 @@ Thumbs.db
 
 # Temp
 commit-msg.txt
+
+# Vault / Prisma
+prisma/dev.db
+prisma/*.db
+*.db
+
+# Spreadsheets (large; run vault:import locally or with prod DB)
+*.xlsx

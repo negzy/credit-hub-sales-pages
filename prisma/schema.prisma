@@ -1,0 +1,62 @@
+// Funding Intelligence Vault - SQLite for dev; switch datasource to postgresql for prod
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Institution {
+  id              String   @id @default(cuid())
+  name            String
+  type            String   // bank | credit_union | fintech
+  primaryBureau    String   // experian | equifax | transunion | unknown
+  bureausPulled   String   // JSON array string
+  products        String   // JSON array e.g. ["Ink", "Business Gold"]
+  approvalFactors String   // JSON array
+  notes           String?
+  sourceLinks     String   // JSON array
+  lastVerifiedAt DateTime?
+  tags            String   // JSON array
+  state           String?  // if present from import
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  @@index([primaryBureau])
+  @@index([type])
+}
+
+model VaultAccess {
+  id         String    @id @default(cuid())
+  email      String?
+  code       String    @unique
+  tier       String    // free | paid
+  redeemedAt DateTime?
+  createdAt  DateTime  @default(now())
+
+  @@index([code])
+  @@index([tier])
+}
+
+// Cache for scraped pages to avoid hammering sources
+model ScrapeCache {
+  id        String   @id @default(cuid())
+  url       String   @unique
+  html      String?  // optional: store snippet or null if we only cache "attempted"
+  status    String   // success | blocked | failed
+  message   String?
+  fetchedAt DateTime @default(now())
+}
+
+// Log for scrape runs and import results
+model ScrapeLog {
+  id        String   @id @default(cuid())
+  source    String   // doctorofcredit | ficoforums | xlsx_import
+  url       String?
+  status    String   // success | blocked | failed | partial
+  message   String?
+  payload   String?  // JSON summary
+  createdAt DateTime @default(now())
+}

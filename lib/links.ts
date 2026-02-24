@@ -13,6 +13,9 @@ export const LINKS = {
   evolutionApply: "/evolution",
   contact: "https://www.skool.com/@nuelnelson",
 
+  /** Full vault access — Skool classroom; after purchase, users unlock at /vault/unlock */
+  vaultFullAccessSkool: "https://www.skool.com/tch/classroom/ab2591f9?md=e28a9bde72eb4b308c2b731c9631d554",
+
   /** Affiliates / partner program */
   affiliatesApply: "#",
   /** Skool community — affiliates get their invite link here */

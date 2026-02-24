@@ -1,5 +1,6 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
+import BanksAndCreditUnionsSection from "@/components/BanksAndCreditUnionsSection";
 import PremiumSection from "@/components/PremiumSection";
 import CapitalAccessSection from "@/components/CapitalAccessSection";
 import CreditResetSection from "@/components/CreditResetSection";
@@ -57,6 +58,7 @@ export default function Home() {
     <main className="relative min-h-screen">
       <Nav />
       <Hero />
+      <BanksAndCreditUnionsSection />
       <CreditResetSection />
       <CapitalAccessSection />
       <PremiumSection />
