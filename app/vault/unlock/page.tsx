@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
-export default function VaultUnlockPage() {
+function VaultUnlockForm() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -65,5 +65,13 @@ export default function VaultUnlockPage() {
         ← Back to vault
       </Link>
     </div>
+  );
+}
+
+export default function VaultUnlockPage() {
+  return (
+    <Suspense fallback={<div className="mx-auto max-w-md px-4 py-12 text-center text-gray-400">Loading...</div>}>
+      <VaultUnlockForm />
+    </Suspense>
   );
 }
