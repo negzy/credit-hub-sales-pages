@@ -18,6 +18,21 @@ interface InstitutionDetail {
   state: string | null;
 }
 
+function dedupeNotes(notes: string | null): string | null {
+  if (!notes) return null;
+  const seen = new Set<string>();
+  const paragraphs = notes
+    .split(/\n{2,}/)
+    .map((p) => p.trim())
+    .filter((p) => {
+      if (!p) return false;
+      if (seen.has(p)) return false;
+      seen.add(p);
+      return true;
+    });
+  return paragraphs.join("\n\n");
+}
+
 export default function VaultFullInstitutionPage() {
   const params = useParams();
   const router = useRouter();
@@ -52,6 +67,8 @@ export default function VaultFullInstitutionPage() {
 
   if (!data) return null;
 
+  const cleanNotes = dedupeNotes(data.notes);
+
   return (
     <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6 lg:px-8">
       <Link href="/vault-full" className="text-sm font-medium text-[#ff7a00] hover:underline">
@@ -81,10 +98,10 @@ export default function VaultFullInstitutionPage() {
             <p className="mt-1 text-gray-400">{data.approvalFactors.join(", ")}</p>
           </section>
         )}
-        {data.notes && (
+        {cleanNotes && (
           <section className="mt-4">
             <h2 className="text-sm font-semibold text-gray-300">Notes</h2>
-            <p className="mt-1 whitespace-pre-line text-gray-400">{data.notes}</p>
+            <p className="mt-1 whitespace-pre-line text-gray-400">{cleanNotes}</p>
           </section>
         )}
         {data.tags.length > 0 && (
