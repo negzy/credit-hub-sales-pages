@@ -15,7 +15,9 @@ export async function validateUnlock(passwordOrCode: string): Promise<{ valid: b
   const trimmed = passwordOrCode.trim();
   if (!trimmed) return { valid: false, tier: "free" };
   const envPassword = getUnlockPassword();
-  if (envPassword && trimmed === envPassword) return { valid: true, tier: "paid" };
+  if (!envPassword) return { valid: false, tier: "free" };
+  // Compare case-insensitively so caps/lowercase don't block
+  if (trimmed.toLowerCase() === envPassword.toLowerCase()) return { valid: true, tier: "paid" };
   return { valid: false, tier: "free" };
 }
 

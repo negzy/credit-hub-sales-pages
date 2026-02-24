@@ -129,7 +129,11 @@ export default function VaultFullPage() {
       {loading ? (
         <p className="mt-8 text-center text-gray-500">Loading...</p>
       ) : institutions.length === 0 ? (
-        <p className="mt-8 text-center text-gray-500">No institutions match your filters.</p>
+        <p className="mt-8 text-center text-gray-500">
+          {total === 0
+            ? "No institutions in the database yet. Run the import against your production Neon DB (see docs/DEPLOY.md)."
+            : "No institutions match your filters."}
+        </p>
       ) : (
         <>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

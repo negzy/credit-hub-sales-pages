@@ -1,10 +1,10 @@
-// Funding Intelligence Vault - SQLite for dev; switch datasource to postgresql for prod
+// Postgres (Neon/Vercel Marketplace or any Postgres). For local dev use a Neon dev DB or Docker.
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 

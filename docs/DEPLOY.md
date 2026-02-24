@@ -41,32 +41,27 @@ git push -u origin main
 
 ---
 
-## 3. Production database
+## 3. Add Postgres via Vercel (Neon)
 
-The app uses **Prisma**. Locally you use SQLite; on Vercel you need a **hosted database** (SQLite on Vercel is not persistent).
+Vercel’s own “Vercel Postgres” was retired; you now add Postgres through the **Marketplace** (Neon is the default). Same idea: Vercel injects the URL into your project.
 
-**Option A – Vercel Postgres**
+1. In the Vercel dashboard, open your project.
+2. Go to **Storage** (or **Integrations** / **Marketplace**).
+3. Click **Create Database** or **Add Integration** → search for **Neon** (or **Postgres**).
+4. Follow the steps to create a Neon database and **connect it to this project**.
+5. Vercel will add env vars like `POSTGRES_PRISMA_URL` or `POSTGRES_URL`. You need `DATABASE_URL` for this app:
+   - Go to **Settings** → **Environment Variables**.
+   - Add **`DATABASE_URL`** and set its value to the **Prisma connection string** (copy from the Neon integration page — it’s often labeled “Prisma” or use `POSTGRES_PRISMA_URL`’s value). It looks like:  
+     `postgresql://user:pass@host/db?sslmode=require`
+6. **Run migrations and import data once** (from your machine, with the production URL):
+   ```bash
+   # Replace with the actual URL from Vercel/Neon (Settings → Env Vars → POSTGRES_PRISMA_URL or from Neon dashboard)
+   DATABASE_URL="postgresql://..." npx prisma db push
+   DATABASE_URL="postgresql://..." npm run vault:import
+   ```
+7. Redeploy the project on Vercel (or push a commit) so the app uses the new DB.
 
-- In the Vercel project: **Storage** → **Create Database** → **Postgres**.
-- Connect it to the project; Vercel will add `POSTGRES_URL` (or similar).
-- In Prisma you’ll point `DATABASE_URL` to that URL. You need to **switch the Prisma schema** to `provider = "postgresql"` for production (or use one schema and set `DATABASE_URL` to Postgres only in production).
-
-**Option B – Neon / Supabase / Railway**
-
-- Create a Postgres database at [neon.tech](https://neon.tech), [supabase.com](https://supabase.com), or [railway.app](https://railway.app).
-- Copy the connection string (e.g. `postgresql://user:pass@host/db?sslmode=require`).
-- In Vercel, set `DATABASE_URL` to that value.
-
-**Using Postgres with this repo**
-
-- The repo is currently set up for SQLite. To use Postgres in production:
-  1. Change `prisma/schema.prisma`: set `provider = "postgresql"` (or use a separate schema / env for prod).
-  2. Set `DATABASE_URL` in Vercel to your Postgres URL.
-  3. Run migrations (or `prisma db push`) against that URL once (e.g. from your machine with `DATABASE_URL` set to the prod URL), then run the one-time import:
-     ```bash
-     DATABASE_URL="postgresql://..." npm run vault:import
-     ```
-  4. Redeploy on Vercel.
+**Local dev:** The app now uses Postgres only. In your local `.env`, set `DATABASE_URL` to a Postgres URL — e.g. a **second** Neon project (free tier) for dev, or the same prod URL if you’re careful. Then run `npx prisma db push` and `npm run vault:import` locally if you want local vault data.
 
 ---
 

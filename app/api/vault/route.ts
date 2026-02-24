@@ -86,14 +86,21 @@ export async function GET(request: NextRequest) {
       });
     }
 
-    // Lite: return only curated major banks, with full bureau info, in display order
+    // Lite: curated major banks if any match; otherwise first 20 by name so free vault is never empty
     const featuredWhere = {
       OR: FEATURED_VAULT_NAMES.map((n) => ({ name: { contains: n } })),
     } as const;
-    const featuredRaw = await prisma.institution.findMany({
+    let featuredRaw = await prisma.institution.findMany({
       where: featuredWhere,
       orderBy: { name: "asc" },
     });
+    // Fallback: if no featured banks match (e.g. DB empty or different names), show first 20
+    if (featuredRaw.length === 0 && total > 0) {
+      featuredRaw = await prisma.institution.findMany({
+        orderBy: { name: "asc" },
+        take: PAGE_SIZE_FREE,
+      });
+    }
     const list = featuredRaw
       .sort((a, b) => {
         const ai = FEATURED_VAULT_NAMES.findIndex((n) => a.name.toLowerCase().includes(n.toLowerCase()));

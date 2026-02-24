@@ -1,6 +1,5 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -8,7 +7,6 @@ export function VaultUnlockForm({ next }: { next: string }) {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -19,14 +17,15 @@ export function VaultUnlockForm({ next }: { next: string }) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ password: password.trim() }),
+        credentials: "include",
       });
       const data = await res.json();
       if (!res.ok) {
         setError(data.error ?? "Invalid password");
         return;
       }
-      router.push(next);
-      router.refresh();
+      // Full page navigation so the cookie is sent on the next request (avoids redirect loop)
+      window.location.href = next;
     } catch {
       setError("Something went wrong. Try again.");
     } finally {

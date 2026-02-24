@@ -82,7 +82,9 @@ export default function VaultPage() {
       {loading ? (
         <p className="mt-8 text-center text-gray-500">Loading...</p>
       ) : institutions.length === 0 ? (
-        <p className="mt-8 text-center text-gray-500">No institutions to show.</p>
+        <p className="mt-8 text-center text-gray-500">
+          No institutions to show. The database may be empty — run the import against your production database (see docs/DEPLOY.md).
+        </p>
       ) : (
         <>
           <div className="mt-8">
