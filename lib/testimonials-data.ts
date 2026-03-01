@@ -78,3 +78,11 @@ export const FUNDING_VIDEOS = [
   src: buildTestimonialUrl("Funding", "Video Testimonial", src),
   label,
 }));
+
+/** All testimonial images in one array for a single unified grid. */
+export const ALL_TESTIMONIAL_IMAGES = [
+  ...CREDIT_INSIDE_COMMUNITY,
+  ...CREDIT_OUTSIDE_COMMUNITY,
+  ...FUNDING_SCREENSHOTS,
+  ...FUNDING_REVIEW_STYLE,
+];
