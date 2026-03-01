@@ -243,7 +243,7 @@ export default function OffersPage() {
             Credit Hub Evolution
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            Evolution is a 4-month implementation program designed to help you build or scale a funding business with real systems, real lenders, and real execution. This is not theory—this is execution. You work directly with Emmanuel to build the infrastructure, positioning, and systems required to generate approvals and revenue. Investment: $997 per month for 4 months.
+            Evolution is a 4-month, done-with-you program with two tracks: Funding Business (credit + capital services) or Skool Growth (audience + membership). Same system—offer, automation, and acquisition engine—so you can scale either path. Investment: $997 per month for 4 months. Cohort-based. Limited seats.
           </p>
           <p className="mt-4 rounded-lg border border-amber-200 bg-amber-50/80 px-4 py-3 text-sm text-gray-700">
             <strong>Commitment:</strong> This is a 4-month program for serious

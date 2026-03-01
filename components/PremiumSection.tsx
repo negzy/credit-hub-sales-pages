@@ -53,6 +53,36 @@ const FEATURES = [
       </svg>
     ),
   },
+  {
+    name: "Community Growth & Discovery",
+    description:
+      "Weekly actions + templates to grow faster and rank higher. Discovery ranking strategy and community growth playbook.",
+    icon: (
+      <svg className="h-8 w-8 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+      </svg>
+    ),
+  },
+  {
+    name: "Lender Vault (1,700+ banks)",
+    description:
+      "Structured database of banks, credit unions, and lenders with bureau insights, approval patterns, and strategic notes for smarter funding decisions.",
+    icon: (
+      <svg className="h-8 w-8 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3.75h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
+      </svg>
+    ),
+  },
+  {
+    name: "Pulse App (Free with Premium)",
+    description:
+      "Track daily engagement + schedule posts with guardrails. Free access to Pulse app for engagement tracking and scheduling.",
+    icon: (
+      <svg className="h-8 w-8 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+      </svg>
+    ),
+  },
 ];
 
 export default function PremiumSection() {
@@ -69,6 +99,9 @@ export default function PremiumSection() {
           </h2>
           <p className="mt-4 text-2xl font-medium text-accent-orange sm:text-3xl">
             $97/month
+          </p>
+          <p className="mt-3 max-w-2xl mx-auto text-gray-400">
+            Premium is for builders: improve your credit outcomes, and/or grow your community with systems.
           </p>
         </div>
 
@@ -97,7 +130,7 @@ export default function PremiumSection() {
             What you get
           </h3>
           <p className="mx-auto mt-3 max-w-xl text-center text-gray-400">
-            Full system access on Skool—training, resources, Lender Vault, and community scaling strategies.
+            Credit GPS roadmap, rapid repair, funding fast-track, Lender Vault (1,700+ banks), community growth + discovery ranking, and Pulse app access.
           </p>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
             {FEATURES.map((feature, i) => (
@@ -135,7 +168,7 @@ export default function PremiumSection() {
               <h3 className="text-lg font-semibold text-white">Who it’s for</h3>
             </div>
             <p className="mt-4 text-gray-400 leading-relaxed">
-              You want to direct guidance, deeper strategy, and access to the same systems used to build and scale real funding and community businesses. You’re ready to put in the work and prefer having the full playbook, Lender Vault, and community support. You’re good with $97/month for ongoing access and updates.
+              You want direct guidance, deeper strategy, and access to the same systems used to build and scale real funding and community businesses. You’re ready to put in the work and prefer having the full playbook, Lender Vault, and community support. You’re good with $97/month for ongoing access and updates.
             </p>
           </div>
           <div className="rounded-2xl border border-surface-border bg-surface-card/80 p-6 sm:p-8">

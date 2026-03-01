@@ -39,12 +39,12 @@ const FAQ_ITEMS = [
   {
     question: "What do I get inside Premium?",
     answer:
-      "Full access to the Skool community and all modules: Fundability System, Rapid Repair, Business Credit Setup, Funding Lab, Execution Vault, Community Growth & Skool scaling strategies, and access to Emmanuel's Lender Vault (1700+ banks database). Priority DM support (responses typically within 24–48 hours). You learn the system and implement at your pace with templates and support.",
+      "Full access to the Skool community and all modules: Fundability System, Rapid Repair, Business Credit Setup, Funding Lab, Execution Vault, Community Growth & Discovery ranking, Lender Vault (1,700+ banks), and free Pulse app access for engagement tracking and scheduling. Priority DM support (responses typically within 24–48 hours). You learn the system and implement at your pace with templates and support.",
   },
   {
     question: "What’s the difference between DFY vs Evolution?",
     answer:
-      "DFY (Capital Access or Credit Reset) means we do the work for you—funding or credit repair. Evolution is done-with-you mentorship to build your own credit/funding business: systems, automation, client acquisition, and scaling. DFY is for getting your own outcome; Evolution is for building the machine that serves others.",
+      "DFY (Capital Access or Credit Reset) means we do the work for you—funding or credit repair. Evolution is a done-with-you program with two tracks: Funding Business (credit + capital services) or Skool Growth (community + membership). Same system, two outcomes. DFY is for getting your own outcome; Evolution is for building the machine that serves others.",
   },
   {
     question: "How does payment work?",
