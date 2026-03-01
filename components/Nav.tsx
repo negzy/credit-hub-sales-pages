@@ -35,6 +35,12 @@ export default function Nav() {
             </Link>
           ))}
           <Link
+            href="/testimonials"
+            className="text-sm font-medium text-gray-400 transition-colors hover:text-accent-orange"
+          >
+            Testimonials
+          </Link>
+          <Link
             href="/affiliates"
             className="text-sm font-medium text-gray-400 transition-colors hover:text-accent-orange"
           >
@@ -75,6 +81,13 @@ export default function Nav() {
                 {a.label}
               </Link>
             ))}
+            <Link
+              href="/testimonials"
+              onClick={() => setOpen(false)}
+              className="rounded-lg py-2 text-sm font-medium text-gray-300 hover:bg-white/5 hover:text-accent-orange"
+            >
+              Testimonials
+            </Link>
             <Link
               href="/affiliates"
               onClick={() => setOpen(false)}
