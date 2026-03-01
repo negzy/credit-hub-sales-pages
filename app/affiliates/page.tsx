@@ -21,7 +21,7 @@ const WHAT_YOU_PROMOTE = [
   { name: "Premium", price: "$97/month", note: "Recurring commission when your referral joins." },
   { name: "Capital Access DFY", price: "$397 + 10% success fee", note: "Earn when your referral starts." },
   { name: "Credit Reset DFY", price: "$597 one-time", note: "Earn when your referral enrolls." },
-  { name: "Evolution", price: "$597/month × 6", note: "Recurring commission for the program." },
+  { name: "Evolution", price: "$997/month × 4", note: "Recurring commission for the program." },
 ];
 
 const GET_LINK_STEPS = [

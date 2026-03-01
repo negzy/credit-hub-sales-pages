@@ -39,7 +39,7 @@ const FAQ_ITEMS = [
   {
     question: "What do I get inside Premium?",
     answer:
-      "Full access to the Skool community and all modules: Fundability System, Rapid Repair, Business Credit Setup, Funding Lab, and Execution Vault. You learn the system and implement at your pace with templates and support.",
+      "Full access to the Skool community and all modules: Fundability System, Rapid Repair, Business Credit Setup, Funding Lab, Execution Vault, Community Growth & Skool scaling strategies, and access to Emmanuel's Lender Vault (1700+ banks database). Priority DM support (responses typically within 24–48 hours). You learn the system and implement at your pace with templates and support.",
   },
   {
     question: "What’s the difference between DFY vs Evolution?",
@@ -49,7 +49,7 @@ const FAQ_ITEMS = [
   {
     question: "How does payment work?",
     answer:
-      "Premium is paid on Skool when you join. DFY services have their own payment flow—Capital Access has a $397 start fee and 10% success fee after funding; Credit Reset is a one-time $597. Evolution is $597/month for 6 months. You’ll get the exact payment link when you apply or sign up.",
+      "Premium is paid on Skool when you join. DFY services have their own payment flow—Capital Access has a $397 start fee and 10% success fee after funding; Credit Reset is a one-time $597. Evolution is $997/month for 4 months. You’ll get the exact payment link when you apply or sign up.",
   },
 ];
 

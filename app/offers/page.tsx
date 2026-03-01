@@ -25,7 +25,7 @@ const PATH_CARDS = [
   },
   {
     title: "Evolution",
-    description: "Done-with-you mentorship to build your own credit/funding business. 6 months, $597/mo.",
+    description: "4-month implementation program to build or scale a funding business. $997/mo for 4 months.",
     ctaText: "Apply for Evolution",
     href: "#evolution",
     variant: "compact" as const,
@@ -108,9 +108,7 @@ export default function OffersPage() {
             Learn the full system on Skool
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            $97/month gets you access to everything we teach: fundability, rapid
-            repair, business credit setup, the funding lab, and the execution
-            vault. You learn at your pace and implement.
+            Premium is designed for people who want direct guidance, deeper strategy, and access to the same systems used to build and scale real funding and community businesses. $97/month gets you full access: fundability, rapid repair, business credit setup, funding lab, execution vault, community growth and Skool scaling strategies, and Emmanuel's Lender Vault (1700+ banks database). Priority DM support (responses typically within 24–48 hours). You learn at your pace and implement.
           </p>
           <ul className="mt-6 space-y-2 text-gray-700">
             <li className="flex items-start gap-2">
@@ -132,6 +130,18 @@ export default function OffersPage() {
             <li className="flex items-start gap-2">
               <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-red" />
               Execution Vault
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-red" />
+              Community Growth & Skool scaling
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-red" />
+              Lender Vault (1700+ banks database)
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-red" />
+              Priority DM support (24–48 hr response)
             </li>
           </ul>
           <div className="mt-8">
@@ -233,14 +243,10 @@ export default function OffersPage() {
             Credit Hub Evolution
           </h2>
           <p className="mt-4 text-lg text-gray-600">
-            This is not part of Premium. $597/month for 6 months. Done-with-you
-            mentorship for building a credit and funding business—systems,
-            automation, and scaling. You get implementation help, systems and
-            automations, accountability, review of your numbers and KPIs, and
-            support to build a real operating model.
+            Evolution is a 4-month implementation program designed to help you build or scale a funding business with real systems, real lenders, and real execution. This is not theory—this is execution. You work directly with Emmanuel to build the infrastructure, positioning, and systems required to generate approvals and revenue. Investment: $997 per month for 4 months.
           </p>
           <p className="mt-4 rounded-lg border border-amber-200 bg-amber-50/80 px-4 py-3 text-sm text-gray-700">
-            <strong>Commitment:</strong> This is a 6-month program for serious
+            <strong>Commitment:</strong> This is a 4-month program for serious
             builders. Not for dabblers. We’re here to help you build something
             that runs.
           </p>

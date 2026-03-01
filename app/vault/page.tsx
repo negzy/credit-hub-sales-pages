@@ -52,6 +52,9 @@ export default function VaultPage() {
         <p className="mt-2 text-gray-400">
           Know which bureau a bank pulls, what they care about, and how to position.
         </p>
+        <p className="mt-3 max-w-2xl mx-auto text-sm text-gray-500">
+          The Lender Vault is a structured database of over 1700 banks, credit unions, and lenders, including bureau insights, approval patterns, and strategic notes designed to help you make smarter funding decisions.
+        </p>
       </div>
 
       {/* Preview: major banks with full bureau info — then premium CTA */}

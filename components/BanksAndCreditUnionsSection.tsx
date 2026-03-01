@@ -33,7 +33,7 @@ export default function BanksAndCreditUnionsSection() {
           Banks & credit unions we track
         </h2>
         <p className="mt-3 text-center text-gray-400">
-          From major banks to regional credit unions — bureau pulls, business cards, and criteria in one place.
+          From major banks to regional credit unions — bureau pulls, business cards, and criteria in one place. The Lender Vault (1700+ institutions) includes bureau insights, approval patterns, and strategic notes for smarter funding decisions.
         </p>
 
         <div className="mt-10">

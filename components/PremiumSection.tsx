@@ -97,7 +97,7 @@ export default function PremiumSection() {
             What you get
           </h3>
           <p className="mx-auto mt-3 max-w-xl text-center text-gray-400">
-            Five modules. One system. Full access on Skool.
+            Full system access on Skool—training, resources, Lender Vault, and community scaling strategies.
           </p>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-1">
             {FEATURES.map((feature, i) => (
@@ -135,7 +135,7 @@ export default function PremiumSection() {
               <h3 className="text-lg font-semibold text-white">Who it’s for</h3>
             </div>
             <p className="mt-4 text-gray-400 leading-relaxed">
-              You want to learn the system and run it yourself. You’re ready to put in the work and prefer having the full playbook, templates, and community so you can implement at your pace. You’re good with $97/month for ongoing access and updates.
+              You want to direct guidance, deeper strategy, and access to the same systems used to build and scale real funding and community businesses. You’re ready to put in the work and prefer having the full playbook, Lender Vault, and community support. You’re good with $97/month for ongoing access and updates.
             </p>
           </div>
           <div className="rounded-2xl border border-surface-border bg-surface-card/80 p-6 sm:p-8">
@@ -160,7 +160,7 @@ export default function PremiumSection() {
               One system. No gatekeeping.
             </h3>
             <p className="mt-4 text-lg text-gray-400 leading-relaxed">
-              Everything we teach—fundability, repair, business credit, funding, and execution—lives inside Premium. No upsells to “unlock” the real strategy. You get the full roadmap and the tools. The only variable is how fast you run it.
+              Premium is designed for people who want direct guidance, deeper strategy, and access to the same systems used to build and scale real funding and community businesses. Everything we teach—fundability, repair, business credit, funding, execution, community growth, and the Lender Vault—lives inside Premium. No upsells. You get the full roadmap and the tools. Priority DM support (responses typically within 24–48 hours). The only variable is how fast you run it.
             </p>
           </div>
         </div>

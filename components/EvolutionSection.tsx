@@ -41,20 +41,18 @@ const PILLARS = [
 ];
 
 const WHAT_YOU_GET = [
-  "Weekly mentorship calls",
-  "System architecture guidance",
-  "Automation setup frameworks",
-  "Funding & credit business playbooks",
-  "Client acquisition strategies",
-  "Templates & SOPs",
-  "Private community access",
-  "Direct feedback on implementation",
+  "Funding business launch or scale strategy",
+  "Offer positioning and monetization planning",
+  "CRM, automation, and pipeline setup guidance",
+  "Lender strategy and approval optimization",
+  "Community growth and authority positioning",
+  "Weekly implementation support and feedback",
+  "Access to private resources and systems",
 ];
 
 const TIMELINE = [
-  { phase: "Month 1–2", focus: "Foundation + systems setup" },
-  { phase: "Month 3–4", focus: "Client acquisition + automation refinement" },
-  { phase: "Month 5–6", focus: "Scaling + optimization + delegation" },
+  { phase: "Month 1–2", focus: "Foundation + systems setup + positioning" },
+  { phase: "Month 3–4", focus: "Implementation + acquisition + scaling" },
 ];
 
 const OUTCOMES = [
@@ -78,10 +76,18 @@ export default function EvolutionSection() {
             Evolution
           </p>
           <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl lg:text-5xl">
-            Build Your Automated Credit & Funding Business.
+            Build Your Automated Credit & Funding Business
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-400">
-            A 6-month done-with-you mentorship to help you install the systems, automation, and acquisition engine needed to generate clients consistently.
+            Evolution is a 4-month implementation program designed to help you build or scale a funding business with real systems, real lenders, and real execution.
+          </p>
+          <p className="mx-auto mt-4 max-w-2xl text-lg font-medium text-white">
+            This is not theory.
+            <br />
+            This is execution.
+          </p>
+          <p className="mx-auto mt-3 max-w-2xl text-gray-400">
+            You're working directly with Emmanuel to build the infrastructure, positioning, and systems required to generate approvals and revenue.
           </p>
           <div className="mt-10">
             <Link
@@ -158,7 +164,7 @@ export default function EvolutionSection() {
             The Evolution System
           </h3>
           <p className="mx-auto mt-3 max-w-xl text-center text-gray-400">
-            Five core pillars. Installed with you over 6 months.
+            Five core pillars. Installed with you over 4 months.
           </p>
           <div className="mt-12 space-y-4">
             {PILLARS.map((pillar, i) => (
@@ -221,7 +227,7 @@ export default function EvolutionSection() {
             Typical outcomes
           </h3>
           <p className="mt-4 text-gray-400">
-            By the end of 6 months, members typically have:
+            By the end of 4 months, members typically have:
           </p>
           <ul className="mt-6 space-y-3">
             {OUTCOMES.map((item, i) => (
@@ -242,13 +248,13 @@ export default function EvolutionSection() {
         <div className="mt-24 rounded-2xl border border-[#FF6A00]/25 bg-[#FF6A00]/5 p-8 backdrop-blur-sm sm:p-12">
           <div className="mx-auto max-w-xl text-center">
             <h3 className="text-2xl font-semibold text-white sm:text-3xl">
-              Pricing
+              Investment
             </h3>
             <p className="mt-6 text-2xl font-semibold text-[#FF6A00]">
-              $597/month for 6 months
+              $997 per month for 4 months
             </p>
             <p className="mt-4 text-gray-300">
-              The commitment is intentional. Consistency over 6 months is what creates results—implementation, refinement, and scaling don’t happen in a weekend. This is for serious builders.
+              The commitment is intentional. Four months of focused implementation—infrastructure, positioning, and systems—with direct support from Emmanuel. This is for serious builders.
             </p>
             <div className="mt-8">
               <Link
@@ -266,7 +272,7 @@ export default function EvolutionSection() {
         {/* Risk Reversal */}
         <div className="mt-16 rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-sm sm:p-8">
           <p className="text-center text-sm text-gray-500 leading-relaxed">
-            Evolution is mentorship and systems guidance. We provide the frameworks, playbooks, and direct feedback. Results depend on your implementation. No guarantees on revenue or outcomes—we’re here to help you build the machine; you run it.
+            Evolution is implementation-focused mentorship. We provide the frameworks, playbooks, and direct feedback. Results depend on your implementation. No guarantees on revenue or outcomes—we’re here to help you build the machine; you run it.
           </p>
         </div>
 
