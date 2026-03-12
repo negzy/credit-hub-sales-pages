@@ -248,24 +248,43 @@
       });
     });
 
+    var lastScrollY = 0;
+    var ticking = false;
+
     function checkScroll() {
       var y = window.scrollY || window.pageYOffset;
       var docHeight = document.documentElement.scrollHeight - window.innerHeight;
       var nearBottom = docHeight > 0 && y >= docHeight - 140;
-      if (y > 400 && !nearBottom) {
+      var scrollingDown = y > lastScrollY;
+      var scrollingUp = y < lastScrollY;
+      lastScrollY = y;
+
+      if (nearBottom) {
+        bar.classList.remove('is-visible');
+        bar.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('sticky-cta-bar-visible');
+      } else if (scrollingUp) {
+        bar.classList.remove('is-visible');
+        bar.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('sticky-cta-bar-visible');
+      } else if (scrollingDown && y > 400) {
         bar.classList.add('is-visible');
         bar.setAttribute('aria-hidden', 'false');
         document.body.classList.add('sticky-cta-bar-visible');
         var fl = document.getElementById('floating-cta');
         if (fl) fl.classList.remove('is-visible');
-      } else {
-        bar.classList.remove('is-visible');
-        bar.setAttribute('aria-hidden', 'true');
-        document.body.classList.remove('sticky-cta-bar-visible');
       }
     }
 
-    window.addEventListener('scroll', checkScroll, { passive: true });
+    window.addEventListener('scroll', function () {
+      if (!ticking) {
+        window.requestAnimationFrame(function () {
+          checkScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    }, { passive: true });
     checkScroll();
   }
 
