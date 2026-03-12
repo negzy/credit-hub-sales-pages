@@ -1659,7 +1659,8 @@ body.sticky-cta-bar-visible .product-page {
   font-size: var(--text-xl);
   font-weight: 600;
   color: var(--text-primary);
-  margin: 0 0 var(--space-4);
+  margin: 0 auto var(--space-4);
+  text-align: center;
 }
 
 .sales-section .funnel-section-title {
@@ -1669,6 +1670,14 @@ body.sticky-cta-bar-visible .product-page {
 @media (min-width: 640px) {
   .sales-section .funnel-section-title {
     font-size: var(--text-3xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .funnel-section-title {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
