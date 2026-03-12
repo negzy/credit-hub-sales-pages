@@ -98,6 +98,10 @@
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
       var btn = form.querySelector('.funnel-btn');
       var firstName = (form.querySelector('[name="first_name"]') || {}).value;
       var lastName = (form.querySelector('[name="last_name"]') || {}).value;
@@ -246,14 +250,18 @@
 
     function checkScroll() {
       var y = window.scrollY || window.pageYOffset;
-      if (y > 400) {
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      var nearBottom = docHeight > 0 && y >= docHeight - 140;
+      if (y > 400 && !nearBottom) {
         bar.classList.add('is-visible');
         bar.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('sticky-cta-bar-visible');
         var fl = document.getElementById('floating-cta');
         if (fl) fl.classList.remove('is-visible');
       } else {
         bar.classList.remove('is-visible');
         bar.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('sticky-cta-bar-visible');
       }
     }
 

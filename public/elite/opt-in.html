@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Fix Your Credit. Become Funding Ready. | The Credit Hub Elite</title>
   <meta name="description" content="Access the same system used to secure $30M+ in funding. Credit reset, funding readiness, and capital access in one system. Join 200+ members.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -345,22 +345,22 @@
       </div>
       <div class="modal__form">
         <p class="funnel-subheadline">Enter your details below and I'll send you the next step.</p>
-        <form id="optin-form" action="#" method="post" novalidate>
+        <form id="optin-form" action="#" method="post">
           <div class="funnel-input-group">
-            <label class="funnel-label" for="modal_first_name">First name</label>
-            <input type="text" id="modal_first_name" name="first_name" class="funnel-input" placeholder="First name" autocomplete="given-name" required>
+            <label class="funnel-label" for="modal_first_name">First name <span aria-hidden="true">*</span></label>
+            <input type="text" id="modal_first_name" name="first_name" class="funnel-input" placeholder="First name" autocomplete="given-name" required aria-required="true">
           </div>
           <div class="funnel-input-group">
-            <label class="funnel-label" for="modal_last_name">Last name</label>
-            <input type="text" id="modal_last_name" name="last_name" class="funnel-input" placeholder="Last name" autocomplete="family-name" required>
+            <label class="funnel-label" for="modal_last_name">Last name <span aria-hidden="true">*</span></label>
+            <input type="text" id="modal_last_name" name="last_name" class="funnel-input" placeholder="Last name" autocomplete="family-name" required aria-required="true">
           </div>
           <div class="funnel-input-group">
-            <label class="funnel-label" for="modal_email">Email</label>
-            <input type="email" id="modal_email" name="email" class="funnel-input" placeholder="you@example.com" autocomplete="email" required>
+            <label class="funnel-label" for="modal_email">Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="modal_email" name="email" class="funnel-input" placeholder="you@example.com" autocomplete="email" required aria-required="true">
           </div>
           <div class="funnel-input-group">
-            <label class="funnel-label" for="modal_phone">Phone</label>
-            <input type="tel" id="modal_phone" name="phone" class="funnel-input" placeholder="(555) 000-0000" autocomplete="tel" required>
+            <label class="funnel-label" for="modal_phone">Phone <span aria-hidden="true">*</span></label>
+            <input type="tel" id="modal_phone" name="phone" class="funnel-input" placeholder="(555) 000-0000" autocomplete="tel" required aria-required="true">
           </div>
           <button type="submit" class="funnel-btn mt-6">Continue (takes 30 seconds)</button>
         </form>
