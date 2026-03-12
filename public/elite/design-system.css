@@ -728,12 +728,21 @@ body {
   font-size: var(--text-2xl);
   font-weight: 700;
   color: var(--text-primary);
-  margin: 0 0 var(--space-10);
+  margin: 0 auto var(--space-10);
   max-width: 36ch;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
   .section-block__title { font-size: var(--text-3xl); }
+}
+
+@media (min-width: 1024px) {
+  .section-block__title {
+    text-align: left;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 /* Framework / system cards (3 columns) */
