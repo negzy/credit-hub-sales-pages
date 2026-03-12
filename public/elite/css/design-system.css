@@ -997,11 +997,18 @@ body {
 .proof-wall-section {
   padding-top: var(--space-12);
   padding-bottom: var(--space-16);
-  overflow: hidden;
 }
 
 .proof-wall-section .section-block__title {
   margin-bottom: var(--space-8);
+}
+
+.proof-wall-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: var(--space-2);
+  scroll-snap-type: x mandatory;
 }
 
 .proof-wall {
@@ -1030,6 +1037,7 @@ body {
   backdrop-filter: blur(8px);
   box-shadow: var(--shadow-card);
   transition: border-color var(--transition-base), box-shadow var(--transition-base);
+  scroll-snap-align: start;
 }
 
 .proof-wall__item:hover {
@@ -1998,12 +2006,12 @@ html {
   scroll-margin-top: var(--space-8);
 }
 
-/* Back to top — fixed bottom-left so it doesn't cover sticky CTA button */
+/* Back to top — fixed bottom-right; moves up when sticky CTA is visible */
 .back-to-top {
   position: fixed;
   bottom: max(var(--space-6), env(safe-area-inset-bottom));
-  left: max(var(--space-6), env(safe-area-inset-left));
-  right: auto;
+  right: max(var(--space-6), env(safe-area-inset-right));
+  left: auto;
   z-index: 100;
   width: 48px;
   height: 48px;
@@ -2030,4 +2038,9 @@ html {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+}
+
+/* When sticky CTA bar is visible, lift the back-to-top button above it */
+body.sticky-cta-bar-visible .back-to-top {
+  bottom: calc(max(var(--space-6), env(safe-area-inset-bottom)) + 80px);
 }
