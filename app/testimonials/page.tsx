@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import Image from "next/image";
 import Nav from "@/components/Nav";
+
+const CREDIT_HUB_ELITE_URL =
+  "https://www.thecredithub.io/elite/opt-in.html?fbclid=PAVERFWAQihcpleHRuA2FlbQIxMABzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAafLCuxSh1MMgV1SajqDID8-Zv1M3HE3qD5doG05i73wwoED3SyhIcrx9SHwxQ_aem_AJnvFjKKs87niehUvMIsrA";
 import { ALL_TESTIMONIAL_IMAGES, FUNDING_VIDEOS } from "@/lib/testimonials-data";
 import TestimonialGrid from "./TestimonialGrid";
 
@@ -31,7 +32,7 @@ function VideoCard({ src, label }: { src: string; label: string }) {
 export default function TestimonialsPage() {
   return (
     <main className="relative min-h-screen">
-      <Nav />
+      <Nav minimal />
 
       <section className="border-b border-surface-border px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
@@ -66,12 +67,14 @@ export default function TestimonialsPage() {
           <p className="text-gray-400">
             Ready to get started? Join the community or pick a path that fits.
           </p>
-          <Link
-            href="/"
+          <a
+            href={CREDIT_HUB_ELITE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
             className="mt-6 inline-flex items-center justify-center rounded-lg bg-accent-orange px-6 py-3 text-sm font-semibold text-black shadow-glow-button transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-accent-orange focus:ring-offset-2 focus:ring-offset-surface-dark"
           >
-            Back to The Credit Hub
-          </Link>
+            The Credit Hub Elite
+          </a>
         </div>
       </section>
 

@@ -3,6 +3,9 @@
 import React, { useState } from "react";
 import Link from "next/link";
 
+const CREDIT_HUB_ELITE_URL =
+  "https://www.thecredithub.io/elite/opt-in.html?fbclid=PAVERFWAQihcpleHRuA2FlbQIxMABzcnRjBmFwcF9pZA8xMjQwMjQ1NzQyODc0MTQAAafLCuxSh1MMgV1SajqDID8-Zv1M3HE3qD5doG05i73wwoED3SyhIcrx9SHwxQ_aem_AJnvFjKKs87niehUvMIsrA";
+
 const ANCHORS = [
   { label: "Credit Reset", href: "#credit-reset" },
   { label: "Capital Access", href: "#capital-access" },
@@ -10,65 +13,85 @@ const ANCHORS = [
   { label: "Evolution", href: "#evolution" },
 ];
 
-export default function Nav() {
+type NavProps = {
+  /** When true, show only "The Credit Hub Elite" link (no menu items). Used on testimonials page. */
+  minimal?: boolean;
+};
+
+export default function Nav({ minimal = false }: NavProps) {
   const [open, setOpen] = useState(false);
 
   return (
-<nav className="sticky top-0 z-50 border-b border-white/10 bg-black/95 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link
-          href="/"
-          className="text-lg font-semibold text-white focus:outline-none focus:ring-2 focus:ring-accent-orange focus:ring-offset-2 focus:ring-offset-black"
-        >
-          The Credit Hub
-        </Link>
+    <nav className="sticky top-0 z-50 border-b border-white/10 bg-black/95 backdrop-blur-md">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
+        {minimal ? (
+          <a
+            href={CREDIT_HUB_ELITE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-lg font-semibold text-white focus:outline-none focus:ring-2 focus:ring-accent-orange focus:ring-offset-2 focus:ring-offset-black"
+          >
+            The Credit Hub Elite
+          </a>
+        ) : (
+          <Link
+            href="/"
+            className="text-lg font-semibold text-white focus:outline-none focus:ring-2 focus:ring-accent-orange focus:ring-offset-2 focus:ring-offset-black"
+          >
+            The Credit Hub
+          </Link>
+        )}
 
-        {/* Desktop */}
-        <div className="hidden items-center gap-8 md:flex">
-          {ANCHORS.map((a) => (
+        {/* Desktop: hide all menu items when minimal */}
+        {!minimal && (
+          <div className="hidden items-center gap-8 md:flex">
+            {ANCHORS.map((a) => (
+              <Link
+                key={a.href}
+                href={a.href}
+                className="text-sm font-medium text-gray-400 transition-colors hover:text-accent-orange"
+              >
+                {a.label}
+              </Link>
+            ))}
             <Link
-              key={a.href}
-              href={a.href}
+              href="/testimonials"
               className="text-sm font-medium text-gray-400 transition-colors hover:text-accent-orange"
             >
-              {a.label}
+              Testimonials
             </Link>
-          ))}
-          <Link
-            href="/testimonials"
-            className="text-sm font-medium text-gray-400 transition-colors hover:text-accent-orange"
-          >
-            Testimonials
-          </Link>
-          <Link
-            href="/affiliates"
-            className="text-sm font-medium text-gray-400 transition-colors hover:text-accent-orange"
-          >
-            Affiliates
-          </Link>
-        </div>
+            <Link
+              href="/affiliates"
+              className="text-sm font-medium text-gray-400 transition-colors hover:text-accent-orange"
+            >
+              Affiliates
+            </Link>
+          </div>
+        )}
 
-        {/* Mobile menu button */}
-        <button
-          type="button"
-          onClick={() => setOpen(!open)}
-          className="rounded-lg p-2 text-gray-400 hover:bg-surface-card hover:text-white md:hidden"
-          aria-expanded={open}
-        >
-          <span className="sr-only">Menu</span>
-          {open ? (
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          ) : (
-            <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          )}
-        </button>
+        {/* Mobile menu button: only show when not minimal */}
+        {!minimal && (
+          <button
+            type="button"
+            onClick={() => setOpen(!open)}
+            className="rounded-lg p-2 text-gray-400 hover:bg-surface-card hover:text-white md:hidden"
+            aria-expanded={open}
+          >
+            <span className="sr-only">Menu</span>
+            {open ? (
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        )}
       </div>
 
-      {open && (
+      {!minimal && open && (
         <div className="border-t border-surface-border px-4 py-4 md:hidden">
           <div className="flex flex-col gap-2">
             {ANCHORS.map((a) => (
